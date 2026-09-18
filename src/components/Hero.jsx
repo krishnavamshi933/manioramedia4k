@@ -104,8 +104,8 @@ const Hero = () => {
 
           {/* Main Headline */}
           <div className="relative inline-block mt-8">
-            <h1 className="text-5xl font-bold text-white leading-tight mb-4 drop-shadow-2xl">
-              Strategic Digital
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 drop-shadow-2xl">
+              Strategic Digital Marketing Agency
               <br />
               <span className="text-[#f7e839] relative min-h-[1.2em] inline-block text-3xl mt-2">
                 <span className="inline-flex items-center">

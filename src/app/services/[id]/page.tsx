@@ -4,7 +4,6 @@ import ServiceDetail from "@/pages/ServiceDetail";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 
-// In Next.js 15+, params is a Promise
 type Props = {
     params: Promise<{ id: string }>;
 };
@@ -18,29 +17,31 @@ export async function generateMetadata(
 
     if (!service) {
         return {
-            title: "Service Not Found - 4KMEDIA",
+            title: "Service Not Found | 4KMEDIA",
         };
     }
 
     const title = `${service.t} Services | 4KMEDIA Hyderabad`;
-    const description = service.d;
+    const rawDesc = service.d || `Professional ${service.t} services in Hyderabad by 4KMEDIA. Drive growth and engagement with our data-driven agency strategies.`;
+    const description = rawDesc.length > 155 ? `${rawDesc.substring(0, 152)}...` : rawDesc;
+    const url = `https://www.4kmedia.in/services/${service.id}`;
 
     return {
         title,
         description,
         alternates: {
-            canonical: `https://4kmedia.in/services/${service.id}`,
+            canonical: url,
         },
         openGraph: {
             title,
             description,
-            url: `https://4kmedia.in/services/${service.id}`,
+            url,
             siteName: "4KMEDIA",
             locale: "en_IN",
             type: "article",
             images: [
                 {
-                    url: "/assets/logo2.png",
+                    url: "https://www.4kmedia.in/assets/33.png",
                     alt: title,
                 }
             ],
@@ -49,7 +50,7 @@ export async function generateMetadata(
             card: "summary_large_image",
             title,
             description,
-            images: ["/assets/logo2.png"],
+            images: ["https://www.4kmedia.in/assets/33.png"],
         },
     };
 }
@@ -75,14 +76,15 @@ export default async function ServiceDynamicPage(props: Props) {
         "description": service.d,
         "provider": {
             "@type": "Organization",
-            "name": "4KMEDIA",
-            "url": "https://4kmedia.in"
+            "name": "4KMEDIA LLP",
+            "alternateName": "4kmediax",
+            "url": "https://www.4kmedia.in"
         },
         "areaServed": "IN",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": service.t,
-            "itemListElement": service.subServices?.map((sub, index) => ({
+            "itemListElement": service.subServices?.map((sub) => ({
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
@@ -93,14 +95,14 @@ export default async function ServiceDynamicPage(props: Props) {
         }
     };
 
-    return (
-        <>
-            <Script
-                id={`service-schema-${service.id}`}
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <ServiceDetail service={service} />
-        </>
-    );
+  return (
+    <>
+      <Script
+        id={`service-schema-${service.id}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceDetail service={service} />
+    </>
+  );
 }

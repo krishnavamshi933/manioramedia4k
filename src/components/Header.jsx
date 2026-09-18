@@ -81,7 +81,7 @@ const Header = () => {
                   }`} />
 
                 <Image // Replaced img with Image
-                  src="/assets/logo2.png"
+                  src="/assets/33.png"
                   alt="4KMEDIA - Premium Digital Agency"
                   width={56} // Added width
                   height={56} // Added height
@@ -182,7 +182,7 @@ const Header = () => {
             className="flex items-center gap-3"
           >
             <Image
-              src="/assets/logo2.png"
+              src="/assets/33.png"
               alt="4KMEDIA"
               width={40}
               height={40}

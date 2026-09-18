@@ -3,19 +3,33 @@ import About from "@/pages/About";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "About 4KMEDIA | Digital Marketing Agency Hyderabad - SEO & Social Media Experts",
-  description: "Learn about 4KMEDIA, a leading digital marketing agency in Hyderabad. Our team of SEO, social media, and web development experts deliver measurable growth for brands.",
-  keywords: "About 4kMedia, Digital Marketing Agency Hyderabad, SEO Experts Hyderabad, Marketing Team, Web Development Company",
+  title: "About 4KMEDIA | Digital Marketing Agency Hyderabad",
+  description: "Learn about 4KMEDIA, Hyderabad's trusted digital marketing agency. Our experts deliver SEO, social media, web development & growth marketing.",
+  keywords: "About 4kMedia, Digital Marketing Agency Hyderabad, SEO Experts Hyderabad, Marketing Team, Web Development Company, 4kmediax",
   alternates: {
-    canonical: "https://4kmedia.in/about",
+    canonical: "https://www.4kmedia.in/about",
   },
   openGraph: {
     title: "About 4KMEDIA | Digital Marketing Agency Hyderabad",
-    description: "Learn about 4KMEDIA, a leading digital marketing agency in Hyderabad. Our team of SEO, social media, and web development experts deliver measurable growth for brands.",
-    url: "https://4kmedia.in/about",
+    description: "Learn about 4KMEDIA, Hyderabad's trusted digital marketing agency. Our experts deliver SEO, social media, web development & growth marketing.",
+    url: "https://www.4kmedia.in/about",
     siteName: "4KMEDIA",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://www.4kmedia.in/assets/33.png",
+        width: 1200,
+        height: 630,
+        alt: "About 4KMEDIA - Digital Marketing Agency Hyderabad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About 4KMEDIA | Digital Marketing Agency Hyderabad",
+    description: "Learn about 4KMEDIA, Hyderabad's trusted digital marketing agency. Our experts deliver SEO, social media, web development & growth marketing.",
+    images: ["https://www.4kmedia.in/assets/33.png"],
   },
 };
 
@@ -25,12 +39,13 @@ export default function AboutPage() {
     "@type": "AboutPage",
     "name": "About 4KMEDIA",
     "description": "Information about 4KMEDIA digital marketing agency in Hyderabad.",
-    "url": "https://4kmedia.in/about",
+    "url": "https://www.4kmedia.in/about",
     "mainEntity": {
       "@type": "Organization",
-      "name": "4KMEDIA",
-      "url": "https://4kmedia.in",
-      "logo": "https://4kmedia.in/assets/logo2.png",
+      "name": "4KMEDIA LLP",
+      "alternateName": "4kmediax",
+      "url": "https://www.4kmedia.in",
+      "logo": "https://www.4kmedia.in/assets/33.png",
       "description": "A leading digital marketing agency in Hyderabad specializing in SEO, Social Media, and Web Development."
     }
   };

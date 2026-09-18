@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Reveal from './Reveal'
 
-const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
+const LegalLayout = ({ children, activeNav = 'tnc', sections = [], lastUpdated = '02 September 2026' }) => {
   const pathname = usePathname()
   const [activeHash, setActiveHash] = useState('')
 
@@ -59,7 +59,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
 
         /* Hero Styling */
         .page-hero {
-          padding: 80px 24px 80px;
+          padding: 40px 24px 32px;
           background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(247, 232, 57, 0.06), transparent 70%);
           text-align: center;
           position: relative;
@@ -73,23 +73,23 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
           gap: 8px;
           background: rgba(247, 232, 57, 0.07);
           border: 1px solid rgba(247, 232, 57, 0.15);
-          padding: 6px 16px;
+          padding: 5px 14px;
           border-radius: 100px;
           font-family: inherit;
           font-size: 10px;
           letter-spacing: 0.14em;
           color: #fff;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           text-transform: uppercase;
           font-weight: 700;
         }
 
         .page-hero h1 {
-          font-size: clamp(32px, 5vw, 60px);
+          font-size: clamp(28px, 4vw, 48px);
           font-weight: 800;
-          line-height: 1.05;
+          line-height: 1.1;
           letter-spacing: -0.03em;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
           color: #fff;
         }
 
@@ -98,33 +98,36 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
         }
 
         .page-hero p {
-          font-size: 16px;
+          font-size: 15px;
           color: rgba(255, 255, 255, 0.6);
-          max-width: 560px;
-          margin: 0 auto 32px;
-          line-height: 1.6;
+          max-width: 600px;
+          margin: 0 auto 24px;
+          line-height: 1.5;
         }
 
         .hero-actions {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 20px;
+          gap: 16px;
         }
 
         .doc-switcher {
           display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           background: rgba(255, 255, 255, 0.03);
           border: 1px solid var(--border);
           padding: 4px;
-          border-radius: 16px;
+          border-radius: 14px;
           backdrop-filter: blur(10px);
+          gap: 4px;
         }
 
         .doc-tab {
-          padding: 10px 28px;
-          border-radius: 12px;
-          font-size: 13px;
+          padding: 8px 20px;
+          border-radius: 10px;
+          font-size: 12.5px;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s ease;
@@ -168,7 +171,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
         /* Layout Grid */
         .layout {
           display: grid;
-          grid-template-columns: 320px 1fr;
+          grid-template-columns: 300px 1fr;
           gap: 0;
           max-width: 1400px;
           margin: 0 auto;
@@ -178,11 +181,11 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
 
         /* Sidebar Styling */
         .sidebar {
-          padding: 64px 40px;
+          padding: 32px 28px;
           position: sticky;
-          top: 100px;
+          top: 80px;
           align-self: start;
-          height: calc(100vh - 100px);
+          height: calc(100vh - 80px);
           overflow-y: auto;
           border-right: 1px solid var(--border);
         }
@@ -190,24 +193,24 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
         .sidebar::-webkit-scrollbar { width: 3px; }
         .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-        .sidebar-section { margin-bottom: 32px; }
+        .sidebar-section { margin-bottom: 24px; }
         .sidebar-label {
           font-size: 10px;
           letter-spacing: 0.16em;
           color: rgba(255, 255, 255, 0.25);
-          margin-bottom: 20px;
+          margin-bottom: 16px;
           display: block;
           text-transform: uppercase;
           font-weight: 700;
         }
 
         .sidebar ul { list-style: none; padding: 0; }
-        .sidebar ul li { margin-bottom: 4px; }
+        .sidebar ul li { margin-bottom: 3px; }
         .sidebar ul a {
           display: block;
-          padding: 10px 16px;
-          border-radius: 12px;
-          font-size: 13.5px;
+          padding: 8px 14px;
+          border-radius: 10px;
+          font-size: 13px;
           color: rgba(255, 255, 255, 0.45);
           text-decoration: none;
           transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -228,7 +231,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
 
         /* Content Area */
         .content {
-          padding: 64px 80px 120px 80px;
+          padding: 32px 64px 80px 64px;
         }
 
         /* Mobile Adjustments */
@@ -248,7 +251,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
           <div className="hero-badge">Legal Documents</div>
         </Reveal>
         <Reveal>
-          <h1>Legal <span>Policies</span></h1>
+          <h1>4KMEDIA <span>Legal Policies & Terms</span></h1>
         </Reveal>
         <Reveal>
           <p>These documents govern your use of 4KMedia LLP's website and services. Please read them carefully. They are written in plain language wherever possible.</p>
@@ -262,8 +265,14 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
             <Link href="/privacy" className={`doc-tab ${activeNav === 'pp' ? 'active' : ''}`}>
               Privacy
             </Link>
+            <Link href="/refund-policy" className={`doc-tab ${activeNav === 'rf' ? 'active' : ''}`}>
+              Refund Policy
+            </Link>
+            <Link href="/disclaimer" className={`doc-tab ${activeNav === 'disc' ? 'active' : ''}`}>
+              Disclaimer
+            </Link>
           </div>
-          <div className="update-chip">Last Updated: 25 February 2026</div>
+          <div className="update-chip">Last Updated: {lastUpdated}</div>
         </Reveal>
       </div>
 
@@ -272,7 +281,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
         <aside className="sidebar">
           <div className="sidebar-section">
             <span className="sidebar-label">
-              {activeNav === 'tnc' ? 'Terms & Conditions' : 'Privacy Policy'}
+              {activeNav === 'tnc' ? 'Terms & Conditions' : activeNav === 'rf' ? 'Refund Policy' : activeNav === 'disc' ? 'Disclaimer' : 'Privacy Policy'}
             </span>
             <ul>
               {sections.map((sec) => (

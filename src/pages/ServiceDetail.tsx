@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Reveal from '../components/Reveal'
+import SocialShare from "@/components/SocialShare"
 import AnimatedIllustrations from '../components/AnimatedIllustrations'
 import { servicesData, Service } from '../constants/servicesData'
 
@@ -91,7 +92,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
                                 </div>
                             )}
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-                                {service.t}
+                                {service.t} Services in Hyderabad
                             </h1>
                         </div>
                     </Reveal>
@@ -104,6 +105,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
                                 </span>
                             ))}
                         </div>
+                        <SocialShare title={`${service.t} Services - 4KMEDIA`} url="" />
                     </Reveal>
                 </div>
             </section>

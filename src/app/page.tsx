@@ -3,19 +3,33 @@ import Home from "@/pages/Home";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "4KMEDIA - Digital Marketing Agency in Hyderabad",
-  description: "4KMEDIA is a leading digital marketing agency in Hyderabad. We specialize in SEO, social media marketing, website development, UI/UX design, and video production. Drive measurable growth with our integrated strategies.",
-  keywords: "Digital Marketing Agency Hyderabad, SEO Services Hyderabad, Social Media Marketing Hyderabad, Website Development Hyderabad, UI/UX Design, Video Production, Logo Design",
+  title: "Digital Marketing Agency in Hyderabad | 4KMEDIA",
+  description: "4KMEDIA is a leading digital marketing agency in Hyderabad specializing in SEO, social media marketing, web development, and performance marketing.",
+  keywords: "Digital Marketing Agency Hyderabad, SEO Services Hyderabad, Social Media Marketing Hyderabad, Website Development Hyderabad, UI/UX Design, Video Production, 4kmediax",
   alternates: {
-    canonical: "https://4kmedia.in/",
+    canonical: "https://www.4kmedia.in",
   },
   openGraph: {
-    title: "4KMEDIA - Digital Marketing Agency in Hyderabad",
-    description: "4KMEDIA is a leading digital marketing agency in Hyderabad. We deliver measurable growth through SEO, social media marketing, website development, and creative strategies.",
-    url: "https://4kmedia.in/",
+    title: "Digital Marketing Agency in Hyderabad | 4KMEDIA",
+    description: "4KMEDIA is a leading digital marketing agency in Hyderabad specializing in SEO, social media marketing, web development, and performance marketing.",
+    url: "https://www.4kmedia.in",
     siteName: "4KMEDIA",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://www.4kmedia.in/assets/33.png",
+        width: 1200,
+        height: 630,
+        alt: "4KMEDIA - Digital Marketing Agency in Hyderabad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Agency in Hyderabad | 4KMEDIA",
+    description: "4KMEDIA is a leading digital marketing agency in Hyderabad specializing in SEO, social media marketing, web development, and performance marketing.",
+    images: ["https://www.4kmedia.in/assets/33.png"],
   },
 };
 
@@ -24,22 +38,23 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "4KMEDIA",
-    "image": "https://4kmedia.in/assets/logo2.png",
-    "@id": "https://4kmedia.in/",
-    "url": "https://4kmedia.in/",
+    "alternateName": "4kmediax",
+    "image": "https://www.4kmedia.in/assets/33.png",
+    "@id": "https://www.4kmedia.in/#localbusiness",
+    "url": "https://www.4kmedia.in",
     "telephone": "+919989958238",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Nizampet Road",
+      "streetAddress": "3-13-745, Bharath Nagar, Mansoorabad, LB Nagar",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
-      "postalCode": "500090",
+      "postalCode": "500074",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 17.5168,
-      "longitude": 78.3854
+      "latitude": 17.3457,
+      "longitude": 78.5522
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -48,11 +63,10 @@ export default function HomePage() {
         "Tuesday",
         "Wednesday",
         "Thursday",
-        "Friday",
-        "Saturday"
+        "Friday"
       ],
       "opens": "09:00",
-      "closes": "20:00"
+      "closes": "18:00"
     },
     "sameAs": [
       "https://www.linkedin.com/company/4kmedia-in",

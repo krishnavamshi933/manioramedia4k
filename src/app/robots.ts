@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/'],
         },
-        sitemap: 'https://4kmedia.in/sitemap.xml',
+        sitemap: 'https://www.4kmedia.in/sitemap.xml',
     }
 }

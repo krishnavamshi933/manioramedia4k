@@ -143,7 +143,7 @@ const Footer = () => (
             <div className="relative">
               <div className="absolute -inset-2 bg-[#f7e839]/20 rounded-xl blur-lg transition-all duration-500 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110" />
               <Image // Replaced img with Image
-                src="/assets/logo2.png"
+                src="/assets/33.png"
                 alt="4KMEDIA"
                 width={56} // Added width
                 height={56} // Added height
@@ -260,6 +260,8 @@ const Footer = () => (
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-white/40 hover:text-white/70 transition-colors">Terms of Service</Link>
+            <Link href="/refund-policy" className="text-white/40 hover:text-white/70 transition-colors">Refund Policy</Link>
+            <Link href="/disclaimer" className="text-white/40 hover:text-white/70 transition-colors">Disclaimer</Link>
           </div>
         </div>
       </div>

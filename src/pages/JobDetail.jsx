@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react'
 import Reveal from '../components/Reveal'
 import Link from 'next/link'
+import SocialShare from '../components/SocialShare'
 
 const JobDetail = ({ job }) => {
     useEffect(() => {
@@ -24,7 +25,7 @@ const JobDetail = ({ job }) => {
                     </div>
 
                     <h1 className="text-3xl md:text-4xl font-serif text-white mb-3 tracking-tight">
-                        {job.title}
+                        {job.title} - Careers at 4KMEDIA
                     </h1>
 
                     <div className="text-sm text-white/50 mb-6 flex flex-wrap items-center gap-1">
@@ -32,6 +33,8 @@ const JobDetail = ({ job }) => {
                         <span>•</span>
                         <span>{job.type}</span>
                     </div>
+
+                    <SocialShare title={`${job.title} Job Opening - 4KMEDIA`} />
 
                     <Link
                         href="/careers#apply"

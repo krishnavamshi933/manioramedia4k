@@ -3,7 +3,6 @@ import { jobsData } from "@/constants/jobsData";
 import JobDetail from "@/pages/JobDetail";
 import { notFound } from "next/navigation";
 
-// In Next.js 15+, params is a Promise
 type Props = {
     params: Promise<{ slug: string }>;
 };
@@ -17,15 +16,40 @@ export async function generateMetadata(
 
     if (!job) {
         return {
-            title: "Job Not Found - 4KMEDIA",
+            title: "Job Position Not Found | 4KMEDIA Careers",
         };
     }
 
+    const title = `${job.title} | Careers at 4KMEDIA`;
+    const rawDesc = job.description || `Apply for ${job.title} at 4KMEDIA in Hyderabad. Join our digital marketing agency team and build a rewarding career.`;
+    const description = rawDesc.length > 155 ? `${rawDesc.substring(0, 152)}...` : rawDesc;
+    const url = `https://www.4kmedia.in/careers/${job.id}`;
+
     return {
-        title: `${job.title} | Careers at 4KMEDIA`,
-        description: job.description.substring(0, 160),
+        title,
+        description,
         alternates: {
-            canonical: `https://4kmedia.in/careers/${job.id}`,
+            canonical: url,
+        },
+        openGraph: {
+            title,
+            description,
+            url,
+            siteName: "4KMEDIA",
+            locale: "en_IN",
+            type: "article",
+            images: [
+                {
+                    url: "https://www.4kmedia.in/assets/33.png",
+                    alt: title,
+                }
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: ["https://www.4kmedia.in/assets/33.png"],
         },
     };
 }

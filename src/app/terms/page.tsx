@@ -2,11 +2,33 @@ import type { Metadata } from "next";
 import Terms from "@/pages/Terms";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | 4KMEDIA Digital Marketing Agency Hyderabad",
-  description: "Read 4KMEDIA's Terms of Service. Our service agreement covers digital marketing, SEO, web development services. Learn about our policies and client responsibilities.",
-  keywords: "Terms of Service, Service Agreement, 4KMEDIA Terms, Digital Marketing Services Hyderabad",
+  title: "Terms and Conditions | 4KMEDIA Digital Agency",
+  description: "Read 4KMEDIA's Terms and Conditions. Guidelines governing client engagements, scope, payment terms, IP rights, and service delivery.",
+  keywords: "Terms and Conditions, Terms of Service, 4KMEDIA Terms, Client Agreement, Digital Marketing Agency Hyderabad, 4kmediax",
   alternates: {
-    canonical: "https://4kmedia.in/terms",
+    canonical: "https://www.4kmedia.in/terms",
+  },
+  openGraph: {
+    title: "Terms and Conditions | 4KMEDIA Digital Agency",
+    description: "Read 4KMEDIA's Terms and Conditions. Guidelines governing client engagements, scope, payment terms, IP rights, and service delivery.",
+    url: "https://www.4kmedia.in/terms",
+    siteName: "4KMEDIA",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://www.4kmedia.in/assets/33.png",
+        width: 1200,
+        height: 630,
+        alt: "Terms and Conditions - 4KMEDIA",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Conditions | 4KMEDIA Digital Agency",
+    description: "Read 4KMEDIA's Terms and Conditions. Guidelines governing client engagements, scope, payment terms, IP rights, and service delivery.",
+    images: ["https://www.4kmedia.in/assets/33.png"],
   },
 };
 
