@@ -140,15 +140,14 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
         <div className="lg:col-span-4">
           <Link href="/" className="flex items-center gap-3 mb-4 group logo-container will-change-transform">
-            <div className="relative">
-              <div className="absolute -inset-2 bg-[#f7e839]/20 rounded-xl blur-lg transition-all duration-500 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-110" />
-              <Image // Replaced img with Image
+            <div className="relative flex items-center justify-center shrink-0">
+              <div className="absolute -inset-1 bg-[#f7e839]/20 rounded-xl blur-md transition-all duration-500 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-105" />
+              <Image
                 src="/assets/33.png"
                 alt="4KMEDIA"
-                width={56} // Added width
-                height={56} // Added height
-                style={{ width: 'auto' }}
-                className="relative h-12 w-auto px-2 lg:h-14 lg:w-auto rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/20"
+                width={56}
+                height={56}
+                className="relative h-11 w-auto object-contain lg:h-13 lg:w-auto p-1 rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/40 bg-[#0a0c10]/60"
               />
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#f7e839] rounded-full transition-all duration-300 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100" />
             </div>

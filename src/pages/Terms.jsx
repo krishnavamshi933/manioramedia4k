@@ -143,19 +143,20 @@ export default function Terms() {
 
         <Box variant="yellow">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-xs font-mono uppercase tracking-wider mb-2">
-            <span>Effective Date / Last Updated: 02 September 2026</span>
+            <span>EFFECTIVE DATE: 02 SEPTEMBER 2026</span>
+            <span>POLICY REF: 4KM-TNC-2026.V2</span>
           </div>
           <P>
-            These Terms and Conditions ("Terms") govern the use of the <strong className="text-white">4KMEDIA LLP</strong> website (<a href="https://www.4kmedia.in/" target="_blank" rel="noopener noreferrer" className="text-brand underline font-medium">https://www.4kmedia.in/</a>), any client portal or system operated by 4KMEDIA LLP, and the provision of services by 4KMEDIA LLP ("4KMEDIA", "we", "us", or "our") to clients ("Client", "you", or "your").
+            These Terms and Conditions (<strong className="text-white">"Terms"</strong> or <strong className="text-white">"Agreement"</strong>) constitute a legally binding contract between <strong className="text-white">4KMEDIA LLP</strong> (a Limited Liability Partnership registered under the laws of India with CIN: ACV-0899, hereinafter referred to as <strong className="text-white">"4KMEDIA"</strong>, <strong className="text-white">"Company"</strong>, <strong className="text-white">"we"</strong>, <strong className="text-white">"us"</strong>, or <strong className="text-white">"our"</strong>) and any client, user, organization, or corporate entity (hereinafter referred to as <strong className="text-white">"Client"</strong>, <strong className="text-white">"you"</strong>, or <strong className="text-white">"your"</strong>) accessing or utilizing the official website (<a href="https://www.4kmedia.in/" target="_blank" rel="noopener noreferrer" className="text-brand underline font-medium">https://www.4kmedia.in/</a>), client portals, digital systems, or engaging 4KMEDIA for professional services.
           </P>
           <P>
-            By using our website or client portal, submitting an enquiry, approving a proposal, purchasing a service, making a payment, or engaging 4KMEDIA for services, you acknowledge that you have read, understood, and agreed to these Terms.
+            By accessing or using our website or client portal, submitting an enquiry, issuing a purchase order, approving a proposal or Statement of Work ("SOW"), issuing payment, or engaging 4KMEDIA for services, you explicitly acknowledge that you have read, understood, and agreed to be bound by these Terms in their entirety.
           </P>
           <P>
-            For specific projects or engagements, these Terms may be supplemented by a Proposal, Statement of Work ("SOW"), quotation, invoice, client-portal record, or other written agreement issued or accepted by the parties. In the event of a conflict, the applicable project-specific written document will prevail to the extent of that conflict.
+            For specific projects or client engagements, these Terms may be supplemented by individual Proposals, Statements of Work ("SOW"), quotations, Master Services Agreements ("MSA"), or invoices. In the event of a direct conflict between these Terms and a fully executed project-specific agreement, the project-specific document will prevail to the extent of such conflict.
           </P>
           <P>
-            If you do not agree to these Terms, do not use our website, client portal, or services.
+            If you do not agree to these Terms, you must immediately cease all access to and use of our website, client portal, and services.
           </P>
         </Box>
 

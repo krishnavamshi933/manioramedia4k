@@ -75,18 +75,17 @@ const Header = () => {
               onMouseLeave={() => setIsHoveringLogo(false)}
               onClick={() => setOpen(false)}
             >
-              <div className="relative">
+              <div className="relative flex items-center justify-center shrink-0">
                 {/* Animated glow effect */}
-                <div className={`absolute -inset-2 bg-[#f7e839]/20 rounded-xl blur-lg transition-all duration-500 ${isHoveringLogo ? 'opacity-100 scale-110' : 'opacity-0 scale-95'
+                <div className={`absolute -inset-1 bg-[#f7e839]/20 rounded-xl blur-md transition-all duration-500 ${isHoveringLogo ? 'opacity-100 scale-105' : 'opacity-0 scale-95'
                   }`} />
 
-                <Image // Replaced img with Image
+                <Image
                   src="/assets/33.png"
                   alt="4KMEDIA - Premium Digital Agency"
-                  width={56} // Added width
-                  height={56} // Added height
-                  style={{ width: 'auto' }}
-                  className="relative h-12 w-auto px-2 lg:h-14 lg:w-auto rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/20"
+                  width={56}
+                  height={56}
+                  className="relative h-11 w-auto object-contain lg:h-13 lg:w-auto p-1 rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/40 bg-[#0a0c10]/60"
                 />
 
                 {/* Floating particles */}
@@ -187,7 +186,7 @@ const Header = () => {
               alt="4KMEDIA"
               width={40}
               height={40}
-              className="h-10 w-auto px-2 rounded-xl border-2 border-[#f7e839]/30"
+              className="h-10 w-auto object-contain p-1 rounded-xl border-2 border-[#f7e839]/40 bg-[#0a0c10]/60"
             />
             <span className="text-xl font-bold text-white tracking-tight">4KMEDIA</span>
           </Link>

@@ -125,11 +125,11 @@ export default function Disclaimer() {
 
         <Box variant="yellow">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-xs font-mono uppercase tracking-wider mb-2">
-            <span>Effective Date: 02 September 2026</span>
-            <span>Last Updated: 02 September 2026</span>
+            <span>EFFECTIVE DATE: 02 SEPTEMBER 2026</span>
+            <span>POLICY REF: 4KM-DISC-2026.V2</span>
           </div>
           <P>
-            This Disclaimer applies primarily to the 4KMEDIA website and Client Portal, including information, content, materials, resources, and general information made available through them by <strong className="text-white">4KMEDIA LLP</strong> ("4KMEDIA", "we", "us", or "our").
+            This Legal Disclaimer (<strong className="text-white">"Disclaimer"</strong>) governs the informational scope, legal disclaimers, liability limitations, and reliance parameters applicable to the digital platform, client portal, software systems, and published content operated by <strong className="text-white">4KMEDIA LLP</strong> (a Limited Liability Partnership registered under the laws of India with CIN: ACV-0899, hereinafter referred to as <strong className="text-white">"4KMEDIA"</strong>, <strong className="text-white">"Company"</strong>, <strong className="text-white">"we"</strong>, <strong className="text-white">"us"</strong>, or <strong className="text-white">"our"</strong>).
           </P>
           <P>
             Specific Services and Client engagements are governed by the applicable Terms and Conditions, Proposal, Statement of Work (SOW), Client Agreement, or other written agreement between 4KMEDIA and the Client. In the event of a conflict, the applicable written agreement will govern the specific engagement.

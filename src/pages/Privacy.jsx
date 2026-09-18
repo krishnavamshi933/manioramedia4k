@@ -129,14 +129,14 @@ export default function Privacy() {
 
         <Box variant="yellow">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-xs font-mono uppercase tracking-wider mb-2">
-            <span>Effective Date: 02 September 2026</span>
-            <span>Last Updated: 02 September 2026</span>
+            <span>EFFECTIVE DATE: 02 SEPTEMBER 2026</span>
+            <span>POLICY REF: 4KM-PRIV-2026.V2</span>
           </div>
           <P>
-            <strong className="text-white">4KMEDIA LLP</strong> (“4KMEDIA,” “we,” “us,” or “our”) respects your privacy and is committed to handling personal data responsibly.
+            This Privacy Policy (<strong className="text-white">"Policy"</strong>) establishes the data governance framework, data protection standards, and privacy protocols maintained by <strong className="text-white">4KMEDIA LLP</strong> (a Limited Liability Partnership registered under the laws of India with CIN: ACV-0899, hereinafter referred to as <strong className="text-white">"4KMEDIA"</strong>, <strong className="text-white">"Company"</strong>, <strong className="text-white">"we"</strong>, <strong className="text-white">"us"</strong>, or <strong className="text-white">"our"</strong>).
           </P>
           <P>
-            This Privacy Policy explains what information we may collect, how we use it, how we may share it, and the choices and rights available to you.
+            This Policy outlines our standards regarding the collection, processing, storage, disclosure, and protection of personal data and corporate information obtained from clients, website visitors, and platform users (hereinafter referred to as <strong className="text-white">"Client"</strong>, <strong className="text-white">"User"</strong>, <strong className="text-white">"you"</strong>, or <strong className="text-white">"your"</strong>) across all digital platforms, client portals, and service engagements.
           </P>
         </Box>
 

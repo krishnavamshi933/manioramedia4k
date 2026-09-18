@@ -133,11 +133,11 @@ export default function RefundPolicy() {
 
         <Box variant="yellow">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-xs font-mono uppercase tracking-wider mb-2">
-            <span>Effective Date: 02 September 2026</span>
-            <span>Last Updated: 02 September 2026</span>
+            <span>EFFECTIVE DATE: 02 SEPTEMBER 2026</span>
+            <span>POLICY REF: 4KM-RFND-2026.V2</span>
           </div>
           <P>
-            This Refund & Cancellation Policy ("Policy") applies to all Services provided by <strong className="text-white">4KMEDIA LLP</strong> ("4KMEDIA", "we", "us", or "our") through <a href="https://www.4kmedia.in/" target="_blank" rel="noopener noreferrer" className="text-brand underline font-medium">https://www.4kmedia.in/</a> or any other authorised channel.
+            This Refund & Cancellation Policy (<strong className="text-white">"Policy"</strong>) governs commercial cancellations, service terminations, and fee adjustment protocols for all professional services delivered by <strong className="text-white">4KMEDIA LLP</strong> (a Limited Liability Partnership registered under the laws of India with CIN: ACV-0899, hereinafter referred to as <strong className="text-white">"4KMEDIA"</strong>, <strong className="text-white">"Company"</strong>, <strong className="text-white">"we"</strong>, <strong className="text-white">"us"</strong>, or <strong className="text-white">"our"</strong>) to clients and engaging entities (hereinafter referred to as <strong className="text-white">"Client"</strong>, <strong className="text-white">"you"</strong>, or <strong className="text-white">"your"</strong>) through <a href="https://www.4kmedia.in/" target="_blank" rel="noopener noreferrer" className="text-brand underline font-medium">https://www.4kmedia.in/</a> or any official digital channel.
           </P>
           <P>
             Our Services are customized professional and digital services, including digital marketing, advertising, SEO, website design and development, branding, design, content creation, video, technology, consulting, registration assistance, and related services.
