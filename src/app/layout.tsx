@@ -91,8 +91,10 @@ export default function RootLayout({
     "sameAs": [
       "https://www.linkedin.com/company/4kmedia-in",
       "https://instagram.com/4kmediax",
-      "https://youtube.com/@4kmediax"
+      "https://youtube.com/@4kmediax",
+      "https://share.google/aimode/y1zPogCfHSj9MdkhV"
     ],
+    "hasMap": "https://maps.app.goo.gl/mhWYxQuozGBcxZ7G9",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+919989958238",
@@ -120,6 +122,7 @@ export default function RootLayout({
     "url": "https://www.4kmedia.in",
     "telephone": "+919989958238",
     "priceRange": "₹₹",
+    "hasMap": "https://maps.app.goo.gl/mhWYxQuozGBcxZ7G9",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3-13-745, Bharath Nagar, Mansoorabad, LB Nagar",
@@ -148,7 +151,8 @@ export default function RootLayout({
     "sameAs": [
       "https://www.linkedin.com/company/4kmedia-in",
       "https://instagram.com/4kmediax",
-      "https://youtube.com/@4kmediax"
+      "https://youtube.com/@4kmediax",
+      "https://share.google/aimode/y1zPogCfHSj9MdkhV"
     ]
   };
 
