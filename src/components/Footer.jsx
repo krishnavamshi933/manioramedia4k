@@ -147,6 +147,7 @@ const Footer = () => (
                 alt="4KMEDIA"
                 width={56} // Added width
                 height={56} // Added height
+                style={{ width: 'auto' }}
                 className="relative h-12 w-auto px-2 lg:h-14 lg:w-auto rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/20"
               />
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#f7e839] rounded-full transition-all duration-300 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100" />

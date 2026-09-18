@@ -185,6 +185,7 @@ const Home = () => (
                 alt={logo.alt}
                 width={200}
                 height={80}
+                style={{ width: 'auto' }}
                 className="h-20 w-auto object-contain opacity-80 transition"
                 draggable="false"
               />
