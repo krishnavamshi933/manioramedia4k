@@ -251,7 +251,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [], lastUpdated =
           <div className="hero-badge">Legal Documents</div>
         </Reveal>
         <Reveal>
-          <h1>4KMEDIA <span>Legal Policies & Terms</span></h1>
+          <h1>Legal <span>Policies</span></h1>
         </Reveal>
         <Reveal>
           <p>These documents govern your use of 4KMedia LLP's website and services. Please read them carefully. They are written in plain language wherever possible.</p>
