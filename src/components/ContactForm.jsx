@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import Toast from "./Toast";
-import emailjs from "@emailjs/browser";
 import { servicesData } from "../constants/servicesData";
 
 // Validation helpers
@@ -18,6 +17,10 @@ const isValidUrl = (url) => {
     return false;
   }
 };
+
+// ─── Environment Variables ───────────────────────────────────────────────────
+const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+// ─────────────────────────────────────────────────────────────────────────────
 
 const ContactForm = () => {
   const formRef = useRef(null);
@@ -91,71 +94,46 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Validate required EmailJS env variables at runtime
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("Missing EmailJS configuration. Check .env variables.", {
-        serviceIdPresent: !!serviceId,
-        templateIdPresent: !!templateId,
-        publicKeyPresent: !!publicKey,
+    const name     = formRef.current.user_name.value.trim();
+    const email    = formRef.current.user_email.value.trim();
+    const phone    = formRef.current.user_phone.value.trim();
+    const location = formRef.current.user_location.value.trim();
+    const website  = formRef.current.user_website ? formRef.current.user_website.value.trim() : "";
+    const service  = formRef.current.service.value;
+    const subService = formRef.current.sub_service ? formRef.current.sub_service.value : "";
+    const message  = formRef.current.message.value.trim();
+    const time     = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", dateStyle: "medium", timeStyle: "short" });
+
+    const payload = { name, email, phone, location, website, service, subService, message, time };
+
+    let resendSuccess = false;
+    let sheetSuccess  = false;
+
+    // 1. Send email via Resend (server-side API route)
+    try {
+      const res = await fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-      setToast({ open: true, message: "Email service not configured. Please try later.", variant: "error" });
-      setIsSubmitting(false);
-      return;
-    }
-
-    let emailJsSuccess = false;
-    let sheetSuccess = false;
-
-    // 1. Try sending via EmailJS
-    try {
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        { publicKey }
-      );
-      emailJsSuccess = true;
+      if (res.ok) {
+        resendSuccess = true;
+      } else {
+        const data = await res.json();
+        console.error("Resend API error:", data.error);
+      }
     } catch (err) {
-      console.error("EmailJS Error (might have hit free tier limits):", err);
+      console.error("Failed to reach /api/send-contact:", err);
     }
 
-    // 2. Try recording in Google Sheets
+    // 2. Try recording in Google Sheets (backup)
     try {
-      const name = formRef.current.user_name.value.trim();
-      const email = formRef.current.user_email.value.trim();
-      const phone = formRef.current.user_phone.value.trim();
-      const location = formRef.current.user_location.value.trim();
-      const website = formRef.current.user_website ? formRef.current.user_website.value.trim() : "";
-      const service = formRef.current.service.value;
-      const subService = formRef.current.sub_service ? formRef.current.sub_service.value : "";
-      const message = formRef.current.message.value.trim();
-
-      const payload = {
-        name,
-        email,
-        phone,
-        location,
-        website,
-        service,
-        subService,
-        message
-      };
-
-      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-      if (scriptUrl) {
-        await fetch(scriptUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain',
-          },
-          body: JSON.stringify({
-            type: 'contact',
-            ...payload
-          }),
+      if (GOOGLE_SCRIPT_URL) {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({ type: "contact", ...payload }),
         });
         sheetSuccess = true;
       }
@@ -163,18 +141,13 @@ const ContactForm = () => {
       console.error("Google Sheets Submission Error:", err);
     }
 
-    // 3. Determine overall success (succeeds if either works)
-    if (emailJsSuccess || sheetSuccess) {
+    // 3. Determine overall success
+    if (resendSuccess || sheetSuccess) {
       setSubmitStatus("success");
       formRef.current.reset();
       setSelectedServiceId("");
       setSelectedSubServiceTitle("");
-      
-      let successMsg = "Message sent successfully!";
-      if (sheetSuccess && !emailJsSuccess) {
-        successMsg = "Message recorded successfully (saved to backup sheet)!";
-      }
-      setToast({ open: true, message: successMsg, variant: "success" });
+      setToast({ open: true, message: "Message sent successfully!", variant: "success" });
       setFieldErrors({});
     } else {
       setSubmitStatus("error");
@@ -195,9 +168,7 @@ const ContactForm = () => {
         Get in Touch
       </h2>
 
-      {/* Recipient for EmailJS pulled from env */}
-      <input type="hidden" name="to_email" value={process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'team@4kmedia.in'} />
-      <input type="hidden" name="time" value={new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} />
+
 
       {/* Name */}
       <div className="flex flex-col gap-2">

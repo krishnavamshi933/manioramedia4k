@@ -110,53 +110,65 @@ const CareersForm = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    const fullName = formRef.current.full_name.value.trim()
-    const email = formRef.current.email.value.trim()
-    const phone = formRef.current.phone.value.trim()
+    const fullName  = formRef.current.full_name.value.trim()
+    const email     = formRef.current.email.value.trim()
+    const phone     = formRef.current.phone.value.trim()
     const portfolio = formRef.current.portfolio.value.trim()
-    const role = formRef.current.role.value
+    const role      = formRef.current.role.value
     const actualRole = role === 'Other' ? formRef.current.other_role.value.trim() : role
-    const resume = formRef.current.resume.value.trim()
+    const resume    = formRef.current.resume.value.trim()
+    const time      = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })
 
-    const payload = {
-      fullName,
-      email,
-      phone,
-      portfolio,
-      role: actualRole,
-      resume
+    const payload = { fullName, email, phone, portfolio, role: actualRole, resume, time }
+
+    let resendSuccess = false
+    let sheetSuccess  = false
+
+    // 1. Send email via Resend (server-side API route)
+    try {
+      const res = await fetch('/api/send-careers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (res.ok) {
+        resendSuccess = true
+      } else {
+        const data = await res.json()
+        console.error('Resend API error:', data.error)
+      }
+    } catch (err) {
+      console.error('Failed to reach /api/send-careers:', err)
     }
 
+    // 2. Try recording in Google Sheets (backup)
     try {
       const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
-      if (!scriptUrl) {
-        throw new Error('Google Apps Script URL is not defined.')
+      if (scriptUrl) {
+        await fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({ type: 'careers', ...payload }),
+        })
+        sheetSuccess = true
       }
+    } catch (err) {
+      console.error('Google Sheets Submission Error:', err)
+    }
 
-      await fetch(scriptUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'text/plain',
-        },
-        body: JSON.stringify({
-          type: 'careers',
-          ...payload
-        }),
-      })
-
+    // 3. Determine overall success
+    if (resendSuccess || sheetSuccess) {
       setSubmitStatus('success')
       formRef.current.reset()
       setSelectedRole('')
       setToast({ open: true, message: 'Application submitted successfully!', variant: 'success' })
       setFieldErrors({})
-    } catch (err) {
-      console.error('Submission Error:', err)
+    } else {
       setSubmitStatus('error')
       setToast({ open: true, message: 'Failed to submit application. Please try again.', variant: 'error' })
-    } finally {
-      setIsSubmitting(false)
     }
+    setIsSubmitting(false)
   }
 
   const getFieldErrorClass = (field) =>
