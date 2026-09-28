@@ -48,14 +48,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
-    const safeName = escapeHtml(name);
-    const safeEmail = escapeHtml(email);
-    const safePhone = escapeHtml(phone);
-    const safeLocation = escapeHtml(location);
-    const safeWebsite = website ? escapeHtml(website) : "";
-    const safeService = escapeHtml(service);
-    const safeSubService = subService ? escapeHtml(subService) : "";
-    const safeMessage = escapeHtml(message);
+    const targetEmail = String(email).trim().toLowerCase();
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = escapeHtml(targetEmail);
+    const safePhone = escapeHtml(phone.trim());
+    const safeLocation = escapeHtml(location.trim());
+    const safeWebsite = website ? escapeHtml(website.trim()) : "";
+    const safeService = escapeHtml(service.trim());
+    const safeSubService = subService ? escapeHtml(subService.trim()) : "";
+    const safeMessage = escapeHtml(message.trim());
     const displayTime =
       time ||
       new Date().toLocaleString("en-IN", {
@@ -72,7 +73,7 @@ export async function POST(req: NextRequest) {
     const teamEmailPromise = resend.emails.send({
       from: FROM_EMAIL,
       to: [TO_EMAIL],
-      replyTo: email,
+      replyTo: targetEmail,
       subject: `New Contact Inquiry from ${safeName} — ${safeService}`,
       html: `
         <!DOCTYPE html>
@@ -182,7 +183,7 @@ export async function POST(req: NextRequest) {
     // 2. Immediate Confirmation / Auto-Reply Email to Submitter
     const userEmailPromise = resend.emails.send({
       from: FROM_EMAIL,
-      to: [email],
+      to: [targetEmail],
       replyTo: TO_EMAIL,
       subject: `Thank you for contacting 4K Media, ${safeName}!`,
       html: `

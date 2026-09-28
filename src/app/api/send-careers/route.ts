@@ -48,12 +48,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
-    const safeFullName = escapeHtml(fullName);
-    const safeEmail = escapeHtml(email);
-    const safePhone = escapeHtml(phone);
-    const safePortfolio = escapeHtml(portfolio);
-    const safeRole = escapeHtml(role);
-    const safeResume = escapeHtml(resume);
+    const targetEmail = String(email).trim().toLowerCase();
+    const safeFullName = escapeHtml(fullName.trim());
+    const safeEmail = escapeHtml(targetEmail);
+    const safePhone = escapeHtml(phone.trim());
+    const safePortfolio = escapeHtml(portfolio.trim());
+    const safeRole = escapeHtml(role.trim());
+    const safeResume = escapeHtml(resume.trim());
     const displayTime =
       time ||
       new Date().toLocaleString("en-IN", {
@@ -70,7 +71,7 @@ export async function POST(req: NextRequest) {
     const teamEmailPromise = resend.emails.send({
       from: FROM_EMAIL,
       to: [TO_EMAIL],
-      replyTo: email,
+      replyTo: targetEmail,
       subject: `New Job Application — ${safeRole} from ${safeFullName}`,
       html: `
         <!DOCTYPE html>
@@ -173,7 +174,7 @@ export async function POST(req: NextRequest) {
     // 2. Candidate Immediate Auto-Reply / Application Confirmation Email
     const candidateEmailPromise = resend.emails.send({
       from: FROM_EMAIL,
-      to: [email],
+      to: [targetEmail],
       replyTo: TO_EMAIL,
       subject: `Application Received: ${safeRole} at 4K Media`,
       html: `
