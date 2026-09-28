@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       "no-reply@4kmedia.in";
     const rawTo = process.env.RESEND_CAREERS_TO_EMAIL || "team@4kmedia.in";
 
-    const FROM_EMAIL = formatSender(rawFrom, "4K Media Careers");
+    const FROM_EMAIL = formatSender(rawFrom, "4KMEDIA CAREERS");
     const TO_EMAIL = rawTo.trim();
 
     const body = await req.json();
@@ -92,10 +92,10 @@ export async function POST(req: NextRequest) {
                     <table style="border-collapse: collapse;">
                       <tr>
                         <td style="vertical-align: middle; padding-right: 12px;">
-                          <img src="${LOGO_URL}" alt="4K Media" width="40" height="40" style="display: block; width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
+                          <img src="${LOGO_URL}" alt="4KMEDIA" width="40" height="40" style="display: block; width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
                         </td>
                         <td style="vertical-align: middle;">
-                          <span style="font-size: 18px; font-weight: 800; letter-spacing: 1px; color: #ffffff;">4K <span style="color: #f7e839;">CAREERS</span></span>
+                          <span style="font-size: 20px; font-weight: 900; letter-spacing: 1.5px; color: #ffffff;">4K<span style="color: #f7e839;">MEDIA</span> <span style="font-size: 14px; font-weight: 700; color: #f7e839; letter-spacing: 1px;">CAREERS</span></span>
                         </td>
                       </tr>
                     </table>
@@ -145,7 +145,7 @@ export async function POST(req: NextRequest) {
                 <a href="${safeResume}" target="_blank" style="display: inline-block; background: #f7e839; color: #0a0f15; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 8px; text-decoration: none; letter-spacing: 0.4px;">
                   Open Resume →
                 </a>
-                <a href="mailto:${safeEmail}?subject=Regarding your application for ${safeRole} at 4K Media" style="display: inline-block; background: #1a2536; color: #ffffff; font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none; border: 1px solid #2d3e56;">
+                <a href="mailto:${safeEmail}?subject=Regarding your application for ${safeRole} at 4KMEDIA" style="display: inline-block; background: #1a2536; color: #ffffff; font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 8px; text-decoration: none; border: 1px solid #2d3e56;">
                   Reply to Candidate
                 </a>
               </div>
@@ -156,14 +156,14 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto 8px; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 8px;">
-                    <img src="${LOGO_URL}" alt="4K Media" width="20" height="20" style="display: block; width: 20px; height: 20px; border-radius: 4px;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="20" height="20" style="display: block; width: 20px; height: 20px; border-radius: 4px;" />
                   </td>
                   <td style="vertical-align: middle;">
-                    <span style="font-size: 12px; font-weight: 700; color: #cbd5e1; letter-spacing: 0.5px;">4K MEDIA CAREERS</span>
+                    <span style="font-size: 12px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.5px;">4KMEDIA CAREERS</span>
                   </td>
                 </tr>
               </table>
-              <p style="margin: 0; font-size: 12px; color: #64748b;">4K Media Talent Acquisition System • <a href="https://www.4kmedia.in" style="color: #f7e839; text-decoration: none;">4kmedia.in</a></p>
+              <p style="margin: 0; font-size: 12px; color: #64748b;">4KMEDIA Talent Acquisition System • <a href="https://www.4kmedia.in" style="color: #f7e839; text-decoration: none;">4kmedia.in</a></p>
             </div>
           </div>
         </body>
@@ -176,14 +176,14 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: [targetEmail],
       replyTo: TO_EMAIL,
-      subject: `Application Received: ${safeRole} at 4K Media`,
+      subject: `Application Received: ${safeRole} at 4KMEDIA`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Application Received — 4K Media</title>
+          <title>Application Received — 4KMEDIA</title>
         </head>
         <body style="margin: 0; padding: 24px 12px; background-color: #05080c; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
           <div style="max-width: 600px; margin: 0 auto; background: #0a0f15; color: #e2e8f0; border-radius: 14px; overflow: hidden; border: 1px solid #1e2a38; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -193,13 +193,13 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 14px;">
-                    <img src="${LOGO_URL}" alt="4K Media Logo" width="48" height="48" style="display: block; width: 48px; height: 48px; border-radius: 10px; border: 2px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="48" height="48" style="display: block; width: 48px; height: 48px; border-radius: 10px; border: 2px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
                   </td>
                   <td style="vertical-align: middle; text-align: left;">
-                    <div style="font-size: 24px; font-weight: 900; letter-spacing: 2px; color: #ffffff; text-transform: uppercase; line-height: 1;">
-                      4K <span style="color: #f7e839;">CAREERS</span>
+                    <div style="font-size: 26px; font-weight: 900; letter-spacing: 1.5px; color: #ffffff; text-transform: uppercase; line-height: 1;">
+                      4K<span style="color: #f7e839;">MEDIA</span> <span style="font-size: 16px; color: #f7e839; letter-spacing: 1px;">CAREERS</span>
                     </div>
-                    <div style="margin-top: 4px; font-size: 11px; font-weight: 600; color: #94a3b8; letter-spacing: 1.5px; text-transform: uppercase;">
+                    <div style="margin-top: 4px; font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 1.5px; text-transform: uppercase;">
                       Talent &amp; Culture
                     </div>
                   </td>
@@ -214,7 +214,7 @@ export async function POST(req: NextRequest) {
                 Hi ${safeFullName},
               </h2>
               <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #cbd5e1;">
-                Thank you for applying to <strong style="color: #ffffff;">4K Media</strong>! We have successfully received your application for the <span style="color: #f7e839; font-weight: 700;">${safeRole}</span> position.
+                Thank you for applying to <strong style="color: #ffffff;">4KMEDIA</strong>! We have successfully received your application for the <span style="color: #f7e839; font-weight: 700;">${safeRole}</span> position.
               </p>
               <p style="margin: 0 0 28px; font-size: 14px; line-height: 1.7; color: #94a3b8;">
                 We are thrilled that you want to bring your talent, craft, and creative vision to our studio.
@@ -267,7 +267,7 @@ export async function POST(req: NextRequest) {
               <!-- CTA -->
               <div style="text-align: center; margin-top: 32px;">
                 <a href="https://www.4kmedia.in" style="display: inline-block; background: #f7e839; color: #0a0f15; font-weight: 700; font-size: 14px; padding: 12px 30px; border-radius: 8px; text-decoration: none; letter-spacing: 0.4px;">
-                  Explore 4K Media Projects →
+                  Explore 4KMEDIA Projects →
                 </a>
               </div>
             </div>
@@ -277,16 +277,16 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto 10px; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 8px;">
-                    <img src="${LOGO_URL}" alt="4K Media" width="24" height="24" style="display: block; width: 24px; height: 24px; border-radius: 4px;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="24" height="24" style="display: block; width: 24px; height: 24px; border-radius: 4px;" />
                   </td>
                   <td style="vertical-align: middle;">
-                    <span style="font-size: 13px; font-weight: 700; color: #cbd5e1; letter-spacing: 0.5px;">4K MEDIA CAREERS</span>
+                    <span style="font-size: 13px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.5px;">4KMEDIA CAREERS</span>
                   </td>
                 </tr>
               </table>
               <p style="margin: 0 0 12px; font-size: 12px; color: #64748b;">Hyderabad, India • Creative &amp; Production Studio</p>
               <p style="margin: 0; font-size: 11px; color: #475569;">
-                &copy; ${new Date().getFullYear()} 4K Media. All rights reserved.
+                &copy; ${new Date().getFullYear()} 4KMEDIA. All rights reserved.
               </p>
             </div>
           </div>

@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       "team@4kmedia.in";
     const rawTo = process.env.RESEND_CONTACT_TO_EMAIL || "team@4kmedia.in";
 
-    const FROM_EMAIL = formatSender(rawFrom, "4K Media");
+    const FROM_EMAIL = formatSender(rawFrom, "4KMEDIA");
     const TO_EMAIL = rawTo.trim();
 
     const body = await req.json();
@@ -94,10 +94,10 @@ export async function POST(req: NextRequest) {
                     <table style="border-collapse: collapse;">
                       <tr>
                         <td style="vertical-align: middle; padding-right: 12px;">
-                          <img src="${LOGO_URL}" alt="4K Media" width="40" height="40" style="display: block; width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
+                          <img src="${LOGO_URL}" alt="4KMEDIA" width="40" height="40" style="display: block; width: 40px; height: 40px; border-radius: 8px; border: 1px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
                         </td>
                         <td style="vertical-align: middle;">
-                          <span style="font-size: 18px; font-weight: 800; letter-spacing: 1px; color: #ffffff;">4K <span style="color: #f7e839;">MEDIA</span></span>
+                          <span style="font-size: 20px; font-weight: 900; letter-spacing: 1.5px; color: #ffffff;">4K<span style="color: #f7e839;">MEDIA</span></span>
                         </td>
                       </tr>
                     </table>
@@ -156,7 +156,7 @@ export async function POST(req: NextRequest) {
 
               <!-- Action button -->
               <div style="text-align: center; margin-top: 24px;">
-                <a href="mailto:${safeEmail}?subject=Re: Inquiry with 4K Media — ${safeService}" style="display: inline-block; background: #f7e839; color: #0a0f15; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 8px; text-decoration: none; letter-spacing: 0.4px;">Reply to Client →</a>
+                <a href="mailto:${safeEmail}?subject=Re: Inquiry with 4KMEDIA — ${safeService}" style="display: inline-block; background: #f7e839; color: #0a0f15; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 8px; text-decoration: none; letter-spacing: 0.4px;">Reply to Client →</a>
               </div>
             </div>
 
@@ -165,14 +165,14 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto 8px; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 8px;">
-                    <img src="${LOGO_URL}" alt="4K Media" width="20" height="20" style="display: block; width: 20px; height: 20px; border-radius: 4px;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="20" height="20" style="display: block; width: 20px; height: 20px; border-radius: 4px;" />
                   </td>
                   <td style="vertical-align: middle;">
-                    <span style="font-size: 12px; font-weight: 700; color: #cbd5e1; letter-spacing: 0.5px;">4K MEDIA</span>
+                    <span style="font-size: 12px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.5px;">4KMEDIA</span>
                   </td>
                 </tr>
               </table>
-              <p style="margin: 0; font-size: 12px; color: #64748b;">4K Media Notification System • <a href="https://www.4kmedia.in" style="color: #f7e839; text-decoration: none;">4kmedia.in</a></p>
+              <p style="margin: 0; font-size: 12px; color: #64748b;">4KMEDIA Notification System • <a href="https://www.4kmedia.in" style="color: #f7e839; text-decoration: none;">4kmedia.in</a></p>
             </div>
           </div>
         </body>
@@ -185,14 +185,14 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: [targetEmail],
       replyTo: TO_EMAIL,
-      subject: `Thank you for contacting 4K Media, ${safeName}!`,
+      subject: `Thank you for contacting 4KMEDIA, ${safeName}!`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>We Received Your Message — 4K Media</title>
+          <title>We Received Your Message — 4KMEDIA</title>
         </head>
         <body style="margin: 0; padding: 24px 12px; background-color: #05080c; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
           <div style="max-width: 600px; margin: 0 auto; background: #0a0f15; color: #e2e8f0; border-radius: 14px; overflow: hidden; border: 1px solid #1e2a38; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -202,14 +202,14 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 14px;">
-                    <img src="${LOGO_URL}" alt="4K Media Logo" width="48" height="48" style="display: block; width: 48px; height: 48px; border-radius: 10px; border: 2px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="48" height="48" style="display: block; width: 48px; height: 48px; border-radius: 10px; border: 2px solid rgba(247, 232, 57, 0.4); background: #0a0c10; object-fit: contain;" />
                   </td>
                   <td style="vertical-align: middle; text-align: left;">
-                    <div style="font-size: 24px; font-weight: 900; letter-spacing: 2px; color: #ffffff; text-transform: uppercase; line-height: 1;">
-                      4K <span style="color: #f7e839;">MEDIA</span>
+                    <div style="font-size: 26px; font-weight: 900; letter-spacing: 1.5px; color: #ffffff; text-transform: uppercase; line-height: 1;">
+                      4K<span style="color: #f7e839;">MEDIA</span>
                     </div>
-                    <div style="margin-top: 4px; font-size: 11px; font-weight: 600; color: #94a3b8; letter-spacing: 1.5px; text-transform: uppercase;">
-                      Creative Studio
+                    <div style="margin-top: 4px; font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 1.5px; text-transform: uppercase;">
+                      Creative Production Studio
                     </div>
                   </td>
                 </tr>
@@ -223,7 +223,7 @@ export async function POST(req: NextRequest) {
                 Hello ${safeName},
               </h2>
               <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: #cbd5e1;">
-                Thank you for reaching out to <strong style="color: #ffffff;">4K Media</strong>! We have received your inquiry regarding <span style="color: #f7e839; font-weight: 600;">${safeService}</span>.
+                Thank you for reaching out to <strong style="color: #ffffff;">4KMEDIA</strong>! We have received your inquiry regarding <span style="color: #f7e839; font-weight: 600;">${safeService}</span>.
               </p>
               <p style="margin: 0 0 28px; font-size: 14px; line-height: 1.7; color: #94a3b8;">
                 Our creative directors and production team are currently reviewing your project details. We typically respond within <strong style="color: #e2e8f0;">24 business hours</strong> to discuss concepts, timelines, and next steps.
@@ -283,16 +283,16 @@ export async function POST(req: NextRequest) {
               <table align="center" style="margin: 0 auto 10px; border-collapse: collapse;">
                 <tr>
                   <td style="vertical-align: middle; padding-right: 8px;">
-                    <img src="${LOGO_URL}" alt="4K Media" width="24" height="24" style="display: block; width: 24px; height: 24px; border-radius: 4px;" />
+                    <img src="${LOGO_URL}" alt="4KMEDIA" width="24" height="24" style="display: block; width: 24px; height: 24px; border-radius: 4px;" />
                   </td>
                   <td style="vertical-align: middle;">
-                    <span style="font-size: 13px; font-weight: 700; color: #cbd5e1; letter-spacing: 0.5px;">4K MEDIA STUDIO</span>
+                    <span style="font-size: 13px; font-weight: 800; color: #cbd5e1; letter-spacing: 0.5px;">4KMEDIA STUDIO</span>
                   </td>
                 </tr>
               </table>
               <p style="margin: 0 0 12px; font-size: 12px; color: #64748b;">Hyderabad, India • High-End Production &amp; Creative Agency</p>
               <p style="margin: 0; font-size: 11px; color: #475569;">
-                &copy; ${new Date().getFullYear()} 4K Media. All rights reserved.
+                &copy; ${new Date().getFullYear()} 4KMEDIA. All rights reserved.
               </p>
             </div>
           </div>
